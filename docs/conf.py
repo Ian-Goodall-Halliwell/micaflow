@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'fastpipe'
+project = 'micaflow'
 copyright = '2024, Cerys Jenkins'
 author = 'Cerys Jenkins'
 release = 'beta_0.0.1'
