@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to fastpipe's documentation!
+Welcome to micaflow's documentation!
 ====================================
 
 .. toctree::
