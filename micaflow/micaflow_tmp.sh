@@ -146,7 +146,7 @@ function micaflow(){
   mri_easywarp --i ${tmp_dir}/${BIDS_ID}_desc-N4_${type}.nii.gz \
                --o ${out}/anat/${BIDS_ID}_space-MNI152_${type}.nii.gz \
                --field ${out}/xfm/${BIDS_ID}_from-${type}_to-MNI151_desc-easyreg_fwdfield.nii.gz \
-               --threads ${threads} --nearest
+               --threads ${threads}
 }
 
 

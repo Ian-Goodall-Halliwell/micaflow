@@ -9,9 +9,9 @@ def dice_score(image1, image2):
     return 2 * intersection / (size_i1 + size_i2)
 
 def jaccard_index(image1, image2):
-    intersection = np.sum(image1 & image2)
-    union = np.sum(image1 | image2)
-    return intersection / union
+    intersection = image1 & image2
+    union = image1 | image2
+    return np.mean(intersection / union)
 
 def main(seg_path, ref_seg_path):
     seg_img = nib.load(seg_path).get_fdata() > 0
