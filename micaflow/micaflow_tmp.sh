@@ -136,19 +136,12 @@ function micaflow(){
   N4BiasFieldCorrection  -d 3 -i "$image" -r -o "${tmp_dir}/${BIDS_ID}_desc-N4_${type}.nii.gz"
 
   # ------------------------------------------------
-  #  Step 4. Apply the warpfield to the MRI
+  #  Step 4. Apply the warpfield to the MNI
   echo -e "\n------------------------------------------------\nStep 4. Apply spatial normalization warpfield\n"
   mri_easywarp --i ${tmp_dir}/${BIDS_ID}_desc-N4_${type}.nii.gz \
                --o ${out}/anat/${BIDS_ID}_space-MNI152_${type}.nii.gz \
                --field ${out}/xfm/${BIDS_ID}_from-${type}_to-MNI151_desc-easyreg_fwdfield.nii.gz \
                --threads ${threads}
-  #  Step 4. Apply the warpfield to the segmentation (for QC purposes)
-  mri_easywarp --i ${tmp_dir}/${BIDS_ID}_desc-N4_${type}.nii.gz \
-               --o ${out}/anat/${BIDS_ID}_space-MNI152_${type}.nii.gz \
-               --field ${out}/xfm/${BIDS_ID}_from-${type}_to-MNI151_desc-easyreg_fwdfield.nii.gz \
-               --threads ${threads}
-}
-
 
 micaflow ${T1w} "T1w"
 micaflow ${flair} "FLAIR"
