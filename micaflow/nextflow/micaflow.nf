@@ -2,18 +2,17 @@
 
 params.subject = 'sub-HC062'
 params.session = 'ses-03'
-params.bids = '/Users/cerys/Documents/MICA/test_data/rawdata'
-params.out_dir = '/Users/cerys/Documents/MICA/test_data/test_outputs'
-params.fs_license = '/Users/cerys/Documents/MICA/license.txt'
-params.threads = 8
+params.bids = '/data_/mica3/BIDS_MICs/rawdata'
+params.out_dir = '/host/yeatman/local_raid/cerys/micaflow_test'
+params.fs_license = '/data_/mica1/01_programs/freesurfer-7.3.2/license.txt'
+params.threads = 15
 
 process BrainSegmentation {
     tag "${params.subject}_${params.session}_${type}_brain_segmentation"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/anat", mode: 'copy'
 
     input:
-    path image
-    val type
+    tuple path(image), val(type)
 
     output:
     path "${params.subject}_${params.session}_desc-synthseg_${type}.nii.gz", emit: synthseg
@@ -32,19 +31,15 @@ process BrainSegmentation {
 
 process BiasFieldCorrection {
     tag "${params.subject}_${params.session}_${type}_bias_field_correction"
-    publishDir "${tmp_dir}/${params.subject}/${params.session}", mode: 'copy'
 
     input:
-    path image
-    val type
+    tuple path(image), val(type)
 
     output:
     path "${params.subject}_${params.session}_desc-N4_${type}.nii.gz"
 
     script:
     """
-    tmp_dir = '/Users/cerys/Documents/MICA/test_data/tmp'
-    mkdir -p ${tmp_dir}/${params.subject}/${params.session}
     N4BiasFieldCorrection -d 3 -i ${image} -r -o ${params.subject}_${params.session}_desc-N4_${type}.nii.gz
     """
 }
@@ -52,10 +47,9 @@ process BiasFieldCorrection {
 process Registration {
     tag "${params.subject}_${params.session}_${type}_registration"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
-    
+
     input:
-    path image
-    val type
+    tuple path(image), val(type)
     path segmentation
     path atlas_mni152
     path atlas_mni152_seg
@@ -80,9 +74,9 @@ process Registration {
 process ApplyWarp {
     tag "${params.subject}_${params.session}_${type}_apply_warp"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/anat", mode: 'copy'
-    
+
     input:
-    val type
+    tuple path(image), val(type)
     path N4
     path warp_field
 
@@ -101,28 +95,33 @@ process ApplyWarp {
 workflow {
 
     // Define atlas paths as parameters or variables
-    atlas_mni152 = Channel.fromPath('/atlas/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz')
-    atlas_mni152_seg = Channel.fromPath('/atlas/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz')
+    atlas_mni152 = Channel.fromPath('/host/yeatman/local_raid/cerys/Downloads/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz')
+    atlas_mni152_seg = Channel.fromPath('/host/yeatman/local_raid/cerys/Downloads/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz')
 
-    images = Channel.fromPath("${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", "${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz")
-    types = Channel.of('T1w', 'FLAIR')
+    //images = Channel.fromPath("${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", "${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz")
+    //types = Channel.of('T1w', 'FLAIR')
+
+    image_types = Channel.of(
+        ["${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", 'T1w'],
+        ["${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz", 'FLAIR']
+    )
 
     // Brain Segmentation
-    BrainSegmentation(images, types)
+    BrainSegmentation(image_types)
     BrainSegmentation.out.synthseg
         .set { seg_ch }
 
     // Bias Field Correction
-    BiasFieldCorrection(images, types)
+    BiasFieldCorrection(image_types)
     BiasFieldCorrection.out
         .set { corrected_ch }
 
     // Registration to MNI space
-    Registration(images, types, seg_ch, atlas_mni152, atlas_mni152_seg)
+    Registration(image_types, seg_ch, atlas_mni152, atlas_mni152_seg)
     Registration.out.fwd_field
         .set { registration_ch }
 
     // Apply Warp uses outputs from BiasFieldCorrection and Registration
-    ApplyWarp(types, corrected_ch, registration_ch)
+    ApplyWarp(image_types, corrected_ch, registration_ch)
 
 }
