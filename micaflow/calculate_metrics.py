@@ -1,26 +1,24 @@
 import sys
-import numpy as np
-import nibabel as nib
+import nipype.algorithms.metrics as nm
 
-def dice_score(image1, image2):
-    intersection = np.sum(image1 & image2)
-    size_i1 = np.sum(image1)
-    size_i2 = np.sum(image2)
-    return 2 * intersection / (size_i1 + size_i2)
+def main(image, reference, output_file):
+    
+    overlap = nm.Overlap()
+    overlap.inputs.volume1 = image
+    overlap.inputs.volume2 = reference
+    res = overlap.run()
 
-def jaccard_index(image1, image2):
-    intersection = image1 & image2
-    union = image1 | image2
-    return np.mean(intersection / union)
-
-def main(seg_path, ref_seg_path):
-    seg_img = nib.load(seg_path).get_fdata() > 0
-    ref_seg_img = nib.load(ref_seg_path).get_fdata() > 0
-    dice = dice_score(seg_img, ref_seg_img)
-    jaccard = jaccard_index(seg_img, ref_seg_img)
-    print(f"Dice Score for {seg_path}: {dice:.4f}")
-    print(f"Jaccard Index for {seg_path}: {jaccard:.4f}")
-
+    with open(output_file, 'w') as file:
+        file.write(f"Overall Jaccard Index: {res.outputs.jaccard}\n")
+        file.write("Jaccard Indices per ROI:\n")
+        for i, roi_ji in enumerate(res.outputs.roi_ji):
+            file.write(f"ROI {i}: {roi_ji}\n")
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], sys.argv[3])
+
+# python3 calculate_metrics.py
+#   /Users/cerys/Documents/MICA/test_data/test_outputs/sub-HC062/sub-HC062_ses-03_space-MNI152_T1w.nii.gz
+#   /Users/cerys/Documents/MICA/micaflow/micaflow/atlas/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz
+#   /Users/cerys/Documents/MICA/test_data/test_outputs/sub-HC062/ses-03/sub-HC062_ses-03_jaccard_indices.csv
+

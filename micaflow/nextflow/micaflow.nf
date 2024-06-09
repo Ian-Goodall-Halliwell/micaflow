@@ -92,6 +92,24 @@ process ApplyWarp {
     """
 }
 
+process CalculateMetrics {
+    tag "${params.subject}_${params.session}_calculate_metrics"
+    publishDir "${params.out_dir}/${params.subject}/${params.session}/metrics", mode: 'copy'
+
+    input:
+    tuple path(image), val(type)
+    path warped
+    path atlas_mni152
+    
+    output:
+    path "${params.subject}_${params.session}_jaccard.csv"
+
+    script:
+    """
+    python3 calculate_metrics.py ${warped} ${atlas_mni152} ${params.subject}_${params.session}_jaccard.csv
+    """
+}
+
 workflow {
 
     // Define atlas paths as parameters or variables
@@ -123,5 +141,10 @@ workflow {
 
     // Apply Warp uses outputs from BiasFieldCorrection and Registration
     ApplyWarp(image_types, corrected_ch, registration_ch)
+    ApplyWarp.out
+        .set { warped_ch }
+
+    // Calculate metrics
+    CalculateMetrics(image_types, warped_ch, atlas_mni152)
 
 }
