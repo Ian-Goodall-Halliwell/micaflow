@@ -1,12 +1,5 @@
 #!/usr/bin/env nextflow
 
-params.subject = 'sub-HC062'
-params.session = 'ses-03'
-params.bids = '/data_/mica3/BIDS_MICs/rawdata'
-params.out_dir = '/host/yeatman/local_raid/cerys/micaflow_test'
-params.fs_license = '/data_/mica1/01_programs/freesurfer-7.3.2/license.txt'
-params.threads = 15
-
 process BrainSegmentation {
     tag "${params.subject}_${params.session}_${type}_brain_segmentation"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/anat", mode: 'copy'
