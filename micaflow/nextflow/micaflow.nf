@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
-if (!params.subject || !params.session || !params.out_dir) {
-    exit 1, "Error: Missing required parameters. Make sure to specify subject, session, bids, out_dir."
+if (!params.subject || !params.session || !params.out_dir || !params.threads) {
+    exit 1, "Error: Missing required parameters. Make sure to specify subject, session, bids, out_dir, threads."
 }
 
 process BrainSegmentation {
@@ -113,12 +113,10 @@ workflow {
     atlas_mni152 = Channel.fromPath('/opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz')
     atlas_mni152_seg = Channel.fromPath('/opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz')
 
-    //images = Channel.fromPath("${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", "${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz")
-    //types = Channel.of('T1w', 'FLAIR')
-
+    // Define image types and paths
     image_types = Channel.of(
-        ["${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", 'T1w'],
-        ["${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz", 'FLAIR']
+        ["/data/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", 'T1w'],
+        ["/data/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz", 'FLAIR']
     )
 
     // Brain Segmentation
