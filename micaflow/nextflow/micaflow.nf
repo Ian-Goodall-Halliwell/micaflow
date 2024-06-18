@@ -1,4 +1,7 @@
 #!/usr/bin/env nextflow
+if (!params.subject || !params.session || !params.out_dir) {
+    exit 1, "Error: Missing required parameters. Make sure to specify subject, session, bids, out_dir."
+}
 
 process BrainSegmentation {
     tag "${params.subject}_${params.session}_${type}_brain_segmentation"
@@ -14,6 +17,7 @@ process BrainSegmentation {
 
     script:
     """
+    export FS_LICENSE=/path/to/license.txt
     mkdir -p ${params.out_dir}/${params.subject}/${params.session}/anat
     mri_synthseg --i ${image} \
                  --o ${params.subject}_${params.session}_desc-synthseg_${type}.nii.gz \
@@ -106,8 +110,8 @@ process CalculateMetrics {
 workflow {
 
     // Define atlas paths as parameters or variables
-    atlas_mni152 = Channel.fromPath('/host/yeatman/local_raid/cerys/Downloads/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz')
-    atlas_mni152_seg = Channel.fromPath('/host/yeatman/local_raid/cerys/Downloads/mni_icbm152_nlin_sym_09a/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz')
+    atlas_mni152 = Channel.fromPath('/opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz')
+    atlas_mni152_seg = Channel.fromPath('/opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz')
 
     //images = Channel.fromPath("${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz", "${params.bids}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz")
     //types = Channel.of('T1w', 'FLAIR')
