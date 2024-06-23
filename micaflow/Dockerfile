@@ -8,33 +8,56 @@ ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8" \
     ND_ENTRYPOINT="/neurodocker/startup.sh"
 
-RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
-    && apt-get update -qq \
-    && apt-get install -y -q --no-install-recommends \
-           apt-utils \
-           bzip2 \
-           ca-certificates \
-           curl \
-           locales \
-           unzip \
-           wget \
-           git \
-           python3 \
-           python3-pip \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
-    && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
-    && dpkg-reconfigure --frontend=noninteractive locales \
-    && update-locale LANG="en_US.UTF-8" \
-    && chmod 777 /opt && chmod a+s /opt \
-    && mkdir -p /neurodocker \
-    && if [ ! -f "$ND_ENTRYPOINT" ]; then \
-         echo '#!/usr/bin/env bash' >> "$ND_ENTRYPOINT" \
-    &&   echo 'set -e' >> "$ND_ENTRYPOINT" \
-    &&   echo 'export USER="${USER:=`whoami`}"' >> "$ND_ENTRYPOINT" \
-    &&   echo 'if [ -n "$1" ]; then "$@"; else /usr/bin/env bash; fi' >> "$ND_ENTRYPOINT"; \
-    fi \
-    && chmod -R 777 /neurodocker && chmod a+s /neurodocker
+RUN apt-get update -qq && \
+    apt-get install -y -q --no-install-recommends \
+        apt-utils \
+        bzip2 \
+        ca-certificates \
+        curl \
+        locales \
+        unzip \
+        wget \
+        git \
+        python3 \
+        python3-pip \
+        python3-setuptools \
+        openjdk-8-jdk \
+        build-essential \
+        gfortran \
+        libatlas-base-dev \
+        libblas-dev \
+        liblapack-dev \
+        bc \
+        libgomp1 \
+        libxmu6 \
+        libxt6 \
+        perl \
+        tcsh && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG="en_US.UTF-8" && \
+    chmod 777 /opt && chmod a+s /opt && \
+    mkdir -p /neurodocker && \
+    if [ ! -f "$ND_ENTRYPOINT" ]; then \
+        echo '#!/usr/bin/env bash' >> "$ND_ENTRYPOINT" && \
+        echo 'set -e' >> "$ND_ENTRYPOINT" && \
+        echo 'export USER="${USER:=`whoami`}"' >> "$ND_ENTRYPOINT" && \
+        echo 'if [ -n "$1" ]; then "$@"; else /usr/bin/env bash; fi' >> "$ND_ENTRYPOINT"; \
+    fi && \
+    chmod -R 777 /neurodocker && chmod a+s /neurodocker
+
+RUN pip3 install --upgrade pip setuptools wheel
+RUN pip3 install numpy==1.19.5
+RUN pip3 install nipype==1.7.1
+
+# Install Nextflow
+RUN wget -qO- https://get.nextflow.io -O /tmp/nextflow && \
+    chmod +x /tmp/nextflow && \
+    mv /tmp/nextflow /usr/local/bin/nextflow
+
+COPY nextflow/micaflow.nf /opt/micaflow/nextflow/micaflow.nf
 
 # Install ANTs
 ENV ANTSPATH="/opt/ants-2.3.4/" \
@@ -42,7 +65,7 @@ ENV ANTSPATH="/opt/ants-2.3.4/" \
 RUN  echo "Downloading ANTs ..." \
     && mkdir -p /opt/ants-2.3.4 \
     && curl -fsSL https://dl.dropbox.com/s/gwf51ykkk5bifyj/ants-Linux-centos6_x86_64-v2.3.4.tar.gz \
-    | tar -xz -C /opt/ants-2.3.4 --strip-components 1
+    | tar -xz -C /opt/ants-2.3.4 --strip-components=1 ants/bin/N4BiasFieldCorrection
 
 # Install FreeSurfer
 ENV FREESURFER_HOME="/opt/freesurfer-7.4.0" \
@@ -76,14 +99,6 @@ RUN apt-get update -qq \
          --exclude='freesurfer/trctrain' \
     && sed -i '$isource "/opt/freesurfer-7.4.0/SetUpFreeSurfer.sh"' "$ND_ENTRYPOINT"
 
-RUN pip3 install setuptools wheel
-RUN pip3 install nipype==1.8.6
-
-RUN wget -qO- https://get.nextflow.io | bash \
-    && mv nextflow /usr/local/bin/
-
-COPY nextflow/micaflow.nf /opt/micaflow/nextflow/micaflow.nf
-
 COPY /atlas/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz /opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz
 COPY /atlas/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz /opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz
 
@@ -92,7 +107,6 @@ RUN bash -c 'cp -r /opt/freesurfer-7.4.0/subjects'
 WORKDIR /home/mica
 
 ENV MICAFLOW="/opt/micaflow"
-
 ENV PROC="container_micaflow-v0.0.1"
 
 ENTRYPOINT ["/neurodocker/startup.sh", "nextflow", "run", "/opt/micaflow/nextflow/micaflow.nf"]
