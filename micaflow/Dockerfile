@@ -110,4 +110,4 @@ WORKDIR /home/mica
 ENV MICAFLOW="/opt/micaflow"
 ENV PROC="container_micaflow-v0.0.1"
 
-ENTRYPOINT ["/neurodocker/startup.sh", "nextflow", "run", "/opt/micaflow/nextflow/micaflow.nf"]
+ENTRYPOINT ["/opt/micaflow/nextflow/micaflow.nf"]
