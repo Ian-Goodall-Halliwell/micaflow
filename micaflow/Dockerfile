@@ -60,12 +60,15 @@ RUN wget -qO- https://get.nextflow.io -O /tmp/nextflow && \
 COPY nextflow/micaflow.nf /opt/micaflow/nextflow/micaflow.nf
 
 # Install ANTs
-ENV ANTSPATH="/opt/ants-2.3.4/" \
-    PATH="/opt/ants-2.3.4:$PATH"
-RUN  echo "Downloading ANTs ..." \
+ENV ANTSPATH="/opt/ants-2.4.3/" \
+    PATH="/opt/ants-2.4.3:$PATH"
+
+RUN echo "Downloading ANTs ..." \
     && mkdir -p /opt/ants-2.3.4 \
-    && curl -fsSL https://dl.dropbox.com/s/gwf51ykkk5bifyj/ants-Linux-centos6_x86_64-v2.3.4.tar.gz \
-    | tar -xz -C /opt/ants-2.3.4 --strip-components=1 ants/bin/N4BiasFieldCorrection
+    && curl -fsSL -o ants.zip https://github.com/ANTsX/ANTs/releases/download/v2.4.3/ants-2.4.3-ubuntu-20.04-X64-gcc.zip \
+    && unzip ants.zip -d /opt \
+    && mv /opt/ants-2.4.3/bin/* /opt/ants-2.4.3 \
+    && rm ants.zip
 
 # Install FreeSurfer
 ENV FREESURFER_HOME="/opt/freesurfer-7.4.0" \
