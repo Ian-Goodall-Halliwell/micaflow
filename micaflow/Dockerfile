@@ -105,8 +105,6 @@ RUN apt-get update -qq \
 COPY /atlas/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz /opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz
 COPY /atlas/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz /opt/micaflow/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz
 
-RUN bash -c 'cp -r /opt/freesurfer-7.4.0/subjects'
-
 WORKDIR /home/mica
 
 ENV MICAFLOW="/opt/micaflow"
