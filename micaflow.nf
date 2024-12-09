@@ -36,7 +36,7 @@ process BrainSegmentation {
     script:
     """
     python3 ${workflow.projectDir}/scripts/mri_synthseg.py \
-        --i ${params.data_directory}/${params.subject}/${params.session}/anat/${image} \
+        --i ${image} \
         --o ${params.subject}_${params.session}_desc-synthseg_${type}.nii.gz \
         --robust \
         --vol ${params.subject}_${params.session}_desc-volumes_${type}.csv \
