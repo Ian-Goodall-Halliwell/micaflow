@@ -285,7 +285,9 @@ def main():
     tf.config.threading.set_inter_op_parallelism_threads(args.threads)
     tf.config.threading.set_intra_op_parallelism_threads(args.threads)
 
-    lut_file = os.path.join(os.environ.get("FREESURFER_HOME"), "FreeSurferColorLUT.txt")
+    lut_file = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "FreeSurferColorLUT.txt"
+    )
     labels = None
     if args.noaddctab:
         args.addctab = False
