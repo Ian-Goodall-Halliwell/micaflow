@@ -36,11 +36,11 @@ process BrainSegmentation {
     script:
     """
     python3 ${workflow.projectDir}/scripts/mri_synthseg.py \
-        --i ${params.data_directory}/${image} \
+        --i ${params.data_directory}/${params.subject}/${params.session}/${image} \
         --o ${params.subject}_${params.session}_desc-synthseg_${type}.nii.gz \
         --robust \
-        --vol ${params.data_directory}/${params.subject}_${params.session}_desc-volumes_${type}.csv \
-        --qc ${params.data_directory}/${params.subject}_${params.session}_desc-qc_${type}.csv \
+        --vol ${params.data_directory}/${params.subject}/${params.session}/${params.subject}_${params.session}_desc-volumes_${type}.csv \
+        --qc ${params.data_directory}/${params.subject}/${params.session}/${params.subject}_${params.session}_desc-qc_${type}.csv \
         --threads ${params.threads} \
         --cpu \
         --parc
