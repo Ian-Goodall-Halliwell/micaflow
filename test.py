@@ -1,0 +1,2 @@
+from ants import n4_bias_field_correction
+n4_bias_field_correction()
