@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: test.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test.py",
+            "args": [
+                "--subject", "sub-HC131",
+                "--session", "ses-01",
+                "--out_dir", "C:/Users/Ian/Desktop/output",
+                "--threads", "16",
+                "--data_directory", "C:/Users/Ian/Desktop/data"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}
