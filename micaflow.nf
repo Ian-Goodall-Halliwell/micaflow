@@ -37,10 +37,10 @@ process BrainSegmentation {
     """
     python3 ${workflow.projectDir}/scripts/mri_synthseg.py \
         --i ${params.data_directory}/${params.subject}/${params.session}/anat/${image} \
-        --o ${params.out_dir}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_desc-synthseg_${type}.nii.gz \
+        --o ${params.subject}_${params.session}_desc-synthseg_${type}.nii.gz \
         --robust \
-        --vol ${params.out_dir}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_desc-volumes_${type}.csv \
-        --qc ${params.out_dir}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_desc-qc_${type}.csv \
+        --vol ${params.subject}_${params.session}_desc-volumes_${type}.csv \
+        --qc ${params.subject}_${params.session}_desc-qc_${type}.csv \
         --threads ${params.threads} \
         --cpu \
         --parc
