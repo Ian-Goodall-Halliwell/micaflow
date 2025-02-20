@@ -365,7 +365,7 @@ process SkullStrip {
     
     output:
     tuple val(type), path("${type}_hdbet.nii.gz") 
-    path "${type}_hdbet_bet.nii.gz"
+    path "${type}_hdbet_mask.nii.gz"
     
     script:
     """
