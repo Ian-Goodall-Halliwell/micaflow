@@ -10,6 +10,6 @@ if __name__ == "__main__":
     parser.add_argument("-m", "--mask", help="Save binary brain mask to path.")
     args = parser.parse_args()
     subprocess.run(
-        "hd-bet -i " + args.input + " -o " + args.output + " -s",
+        "hd-bet -i " + args.input + " -o " + args.output,
         shell=True,
     )
