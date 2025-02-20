@@ -14,9 +14,21 @@ release = '0.1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinx_tabs.tabs',
+              'sphinx.ext.autodoc',
+              'sphinx.ext.autosectionlabel',
+              'sphinx.ext.autosummary',
+              #'sphinx.ext.doctest',
+              #'sphinx.ext.intersphinx',
+              #sphinx.ext.mathjax',
+              'sphinx.ext.napoleon',
+              'sphinx.ext.viewcode',
+              #'sphinxarg.ext',
+              ]
 
 templates_path = ['_templates']
+
+master_doc = 'index'
 exclude_patterns = []
 
 
