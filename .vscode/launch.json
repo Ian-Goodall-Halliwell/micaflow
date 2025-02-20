@@ -1,19 +1,22 @@
 {
-    "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: test.py",
+            "name": "Python Debugger: Current File with Arguments",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/test.py",
+            "program": "${file}",
+            "console": "integratedTerminal",
             "args": [
-                "--subject", "sub-HC131",
-                "--session", "ses-01",
-                "--out_dir", "C:/Users/Ian/Desktop/output",
-                "--threads", "16",
-                "--data_directory", "C:/Users/Ian/Desktop/data"
+                    "--ref", "/home/ian/GitHub/micaflow/atlas/mni_icbm152_t1_tal_nlin_sym_09a.nii.gz",     
+                    "--ref_seg", "/home/ian/GitHub/micaflow/atlas/mni_icbm152_t1_tal_nlin_sym_09a_synthseg.nii.gz",         
+                    "--flo", "/home/ian/output/sub-HC131/ses-01/anat/sub-HC131_ses-01_desc-N4_FLAIR.nii.gz",         
+                    "--flo_seg", "/home/ian/output/sub-HC131/ses-01/anat/sub-HC131_ses-01_desc-synthseg_FLAIR.nii.gz",         
+                    "--fwd_field", "/home/ian/output/sub-HC131/ses-01/anat/sub-HC131_ses-01_from-FLAIR_to-MNI152_desc-easyreg_fwdfield.nii.gz",         
+                    "--bak_field", "/home/ian/output/sub-HC131/ses-01/anat/sub-HC131_ses-01_from-FLAIR_to-MNI152_desc-easyreg_bakfield.nii.gz",
+                    "--threads", "1"
+                // "--subject sub-HC131 --session ses-01 --out_dir ~//output --data_directory ~//GitHub/data --threads 1"
             ],
-            "console": "integratedTerminal"
+            "justMyCode": false
         }
     ]
 }
