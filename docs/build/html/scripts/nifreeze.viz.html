@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nifreeze.viz package &mdash; micaflow 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="runtexture module" href="runtexture.html" />
+    <link rel="prev" title="nifreeze.utils package" href="nifreeze.utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #111111" >
+            <a href="../index.html" class="icon icon-home"> micaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">scripts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DWIreg.html">DWIreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="N4BiasFieldCorrection.html">N4BiasFieldCorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculate_metrics.html">calculate_metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coregister.html">coregister module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_applytopup.html">dwi_applytopup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_biascorrection.html">dwi_biascorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_compute_fa_md.html">dwi_compute_fa_md module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_denoise.html">dwi_denoise module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_fa_md_registration.html">dwi_fa_md_registration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_linearreg.html">dwi_linearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_motioncorrection.html">dwi_motioncorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_nonlinearreg.html">dwi_nonlinearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_topup.html">dwi_topup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdbet.html">hdbet module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="nifreeze.html">nifreeze package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="nifreeze.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-conftest-module">nifreeze.conftest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-module">nifreeze.estimator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-eddy-module">nifreeze.estimator_eddy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-motion-module">nifreeze.estimator_motion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#module-nifreeze.exceptions">nifreeze.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#module-nifreeze">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="runtexture.html">runtexture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testrun.html">testrun module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texturepipeline.html">texturepipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topup_new.html">topup_new module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use_warp.html">use_warp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts_api.html">Scripts API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #111111" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">micaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">scripts</a></li>
+          <li class="breadcrumb-item"><a href="nifreeze.html">nifreeze package</a></li>
+      <li class="breadcrumb-item active">nifreeze.viz package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scripts/nifreeze.viz.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="nifreeze-viz-package">
+<h1>nifreeze.viz package<a class="headerlink" href="#nifreeze-viz-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-nifreeze.viz.signals">
+<span id="nifreeze-viz-signals-module"></span><h2>nifreeze.viz.signals module<a class="headerlink" href="#module-nifreeze.viz.signals" title="Permalink to this headline"></a></h2>
+<p>Visualizing signals and intermediate aspects of models.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.calculate_sphere_pts">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">calculate_sphere_pts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#calculate_sphere_pts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.calculate_sphere_pts" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the location of each point when it is expanded out to the sphere.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.compute_dmri_convex_hull">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">compute_dmri_convex_hull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#compute_dmri_convex_hull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.compute_dmri_convex_hull" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the convex hull of the dMRI signal s.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.plot_correlation">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">plot_correlation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#plot_correlation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.plot_correlation" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.plot_error">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">plot_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kfolds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">std_dev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'orange'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(19.2,</span> <span class="pre">10.8)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">matplotlib.figure.Figure</span></span></span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#plot_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.plot_error" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the error and standard deviation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>kfolds</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – Number of k-folds.</p></li>
+<li><p><strong>mean</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code>) – Mean RMSE values.</p></li>
+<li><p><strong>std_dev</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code>) – Standard deviation values.</p></li>
+<li><p><strong>xlabel</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – X-axis label.</p></li>
+<li><p><strong>ylabel</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Y-axis label.</p></li>
+<li><p><strong>title</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Plot title.</p></li>
+<li><p><strong>color</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, optional) – Plot color.</p></li>
+<li><p><strong>figsize</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">tuple</span></code>, optional) – Figure size.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Matplotlib figure object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">Figure</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.plot_estimation_carpet">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">plot_estimation_carpet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gt_nii</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gp_nii</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gtab</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suptitle</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#plot_estimation_carpet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.plot_estimation_carpet" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.plot_prediction_surface">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">plot_prediction_surface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred_dirs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#plot_prediction_surface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.plot_prediction_surface" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the prediction surface obtained by computing the convex hull of the
+predicted signal data, and plot the true data as a scatter plot.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.plot_signal_data">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">plot_signal_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#plot_signal_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.plot_signal_data" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the data provided as a scatter plot</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.viz.signals.plot_surface">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.viz.signals.</span></span><span class="sig-name descname"><span class="pre">plot_surface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scaled_vecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sphere_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triang_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/nifreeze/viz/signals.html#plot_surface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.viz.signals.plot_surface" title="Permalink to this definition"></a></dt>
+<dd><p>Plot a surface.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-nifreeze.viz">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-nifreeze.viz" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nifreeze.utils.html" class="btn btn-neutral float-left" title="nifreeze.utils package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="runtexture.html" class="btn btn-neutral float-right" title="runtexture module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ian Goodall-Halliwell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

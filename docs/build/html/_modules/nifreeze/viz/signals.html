@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nifreeze.viz.signals &mdash; micaflow 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/tabs.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/tabs.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #111111" >
+            <a href="../../../index.html" class="icon icon-home"> micaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripts/modules.html">scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/DWIreg.html">DWIreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/N4BiasFieldCorrection.html">N4BiasFieldCorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/calculate_metrics.html">calculate_metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/coregister.html">coregister module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_applytopup.html">dwi_applytopup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_biascorrection.html">dwi_biascorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_compute_fa_md.html">dwi_compute_fa_md module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_denoise.html">dwi_denoise module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_fa_md_registration.html">dwi_fa_md_registration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_linearreg.html">dwi_linearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_motioncorrection.html">dwi_motioncorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_nonlinearreg.html">dwi_nonlinearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/dwi_topup.html">dwi_topup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/hdbet.html">hdbet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/nifreeze.html">nifreeze package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#nifreeze-conftest-module">nifreeze.conftest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#nifreeze-estimator-module">nifreeze.estimator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#nifreeze-estimator-eddy-module">nifreeze.estimator_eddy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#nifreeze-estimator-motion-module">nifreeze.estimator_motion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#module-nifreeze.exceptions">nifreeze.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../scripts/nifreeze.html#module-nifreeze">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/runtexture.html">runtexture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/testrun.html">testrun module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/texturepipeline.html">texturepipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/topup_new.html">topup_new module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../scripts/use_warp.html">use_warp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../scripts_api.html">Scripts API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #111111" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">micaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">nifreeze.viz.signals</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for nifreeze.viz.signals</h1><div class="highlight"><pre>
+<span></span><span class="c1"># emacs: -*- mode: python; py-indent-offset: 4; indent-tabs-mode: nil -*-</span>
+<span class="c1"># vi: set ft=python sts=4 ts=4 sw=4 et:</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright The NiPreps Developers &lt;nipreps@gmail.com&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="c1"># you may not use this file except in compliance with the License.</span>
+<span class="c1"># You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software</span>
+<span class="c1"># distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="c1"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="c1"># See the License for the specific language governing permissions and</span>
+<span class="c1"># limitations under the License.</span>
+<span class="c1">#</span>
+<span class="c1"># We support and encourage derived works from this project, please read</span>
+<span class="c1"># about our expectations at</span>
+<span class="c1">#</span>
+<span class="c1">#     https://www.nipreps.org/community/licensing/</span>
+<span class="c1">#</span>
+<span class="sd">&quot;&quot;&quot;Visualizing signals and intermediate aspects of models.&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial</span> <span class="kn">import</span> <span class="n">ConvexHull</span><span class="p">,</span> <span class="n">KDTree</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+
+
+<div class="viewcode-block" id="plot_error"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.plot_error">[docs]</a><span class="k">def</span> <span class="nf">plot_error</span><span class="p">(</span>
+    <span class="n">kfolds</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span>
+    <span class="n">mean</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">std_dev</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">xlabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">color</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">19.2</span><span class="p">,</span> <span class="mf">10.8</span><span class="p">),</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot the error and standard deviation.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    kfolds : :obj:`list`</span>
+<span class="sd">        Number of k-folds.</span>
+<span class="sd">    mean : :obj:`~numpy.ndarray`</span>
+<span class="sd">        Mean RMSE values.</span>
+<span class="sd">    std_dev : :obj:`~numpy.ndarray`</span>
+<span class="sd">        Standard deviation values.</span>
+<span class="sd">    xlabel : :obj:`str`</span>
+<span class="sd">        X-axis label.</span>
+<span class="sd">    ylabel : :obj:`str`</span>
+<span class="sd">        Y-axis label.</span>
+<span class="sd">    title : :obj:`str`</span>
+<span class="sd">        Plot title.</span>
+<span class="sd">    color : :obj:`str`, optional</span>
+<span class="sd">        Plot color.</span>
+<span class="sd">    figsize : :obj:`tuple`, optional</span>
+<span class="sd">        Figure size.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    :obj:`~matplotlib.pyplot.Figure`</span>
+<span class="sd">        Matplotlib figure object.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kfolds</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">kfolds</span><span class="p">,</span> <span class="n">mean</span> <span class="o">-</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">mean</span> <span class="o">+</span> <span class="n">std_dev</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">kfolds</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">kfolds</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">kfolds</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+<div class="viewcode-block" id="plot_estimation_carpet"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.plot_estimation_carpet">[docs]</a><span class="k">def</span> <span class="nf">plot_estimation_carpet</span><span class="p">(</span><span class="n">gt_nii</span><span class="p">,</span> <span class="n">gp_nii</span><span class="p">,</span> <span class="n">gtab</span><span class="p">,</span> <span class="n">suptitle</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">nireports.reportlets.modality.dwi</span> <span class="kn">import</span> <span class="n">nii_to_carpetplot_data</span>
+    <span class="kn">from</span> <span class="nn">nireports.reportlets.nuisance</span> <span class="kn">import</span> <span class="n">plot_carpet</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">gridspec</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figure</span><span class="o">=</span><span class="n">fig</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">suptitle</span><span class="p">)</span>
+
+    <span class="n">divide_by_b0</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">gt_data</span><span class="p">,</span> <span class="n">segments</span> <span class="o">=</span> <span class="n">nii_to_carpetplot_data</span><span class="p">(</span><span class="n">gt_nii</span><span class="p">,</span> <span class="n">bvals</span><span class="o">=</span><span class="n">gtab</span><span class="o">.</span><span class="n">bvals</span><span class="p">,</span> <span class="n">divide_by_b0</span><span class="o">=</span><span class="n">divide_by_b0</span><span class="p">)</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Ground truth&quot;</span>
+    <span class="n">plot_carpet</span><span class="p">(</span><span class="n">gt_data</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">subplot</span><span class="o">=</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="n">gp_data</span><span class="p">,</span> <span class="n">segments</span> <span class="o">=</span> <span class="n">nii_to_carpetplot_data</span><span class="p">(</span><span class="n">gp_nii</span><span class="p">,</span> <span class="n">bvals</span><span class="o">=</span><span class="n">gtab</span><span class="o">.</span><span class="n">bvals</span><span class="p">,</span> <span class="n">divide_by_b0</span><span class="o">=</span><span class="n">divide_by_b0</span><span class="p">)</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Estimated (GP)&quot;</span>
+    <span class="n">plot_carpet</span><span class="p">(</span><span class="n">gt_data</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">subplot</span><span class="o">=</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span></div>
+
+
+<div class="viewcode-block" id="plot_correlation"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.plot_correlation">[docs]</a><span class="k">def</span> <span class="nf">plot_correlation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+    <span class="c1"># Fit a linear curve and estimate its y-values and their error</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">deg</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_est</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">y_err</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_est</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;r = </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">correlation</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_est</span> <span class="o">-</span> <span class="n">y_err</span><span class="p">,</span> <span class="n">y_est</span> <span class="o">+</span> <span class="n">y_err</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Ground truth&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Estimated&quot;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">r</span></div>
+
+
+<div class="viewcode-block" id="calculate_sphere_pts"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.calculate_sphere_pts">[docs]</a><span class="k">def</span> <span class="nf">calculate_sphere_pts</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">center</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the location of each point when it is expanded out to the sphere.&quot;&quot;&quot;</span>
+
+    <span class="n">kdtree</span> <span class="o">=</span> <span class="n">KDTree</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>  <span class="c1"># tree of nearest points</span>
+    <span class="c1"># d is an array of distances, i is an array of indices</span>
+    <span class="n">d</span><span class="p">,</span> <span class="n">i</span> <span class="o">=</span> <span class="n">kdtree</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">sphere_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">points</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+        <span class="n">sphere_pts</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="n">p</span><span class="p">]]</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">/</span> <span class="n">d</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+    <span class="c1"># points and the indices for where they were in the original lists</span>
+    <span class="k">return</span> <span class="n">sphere_pts</span><span class="p">,</span> <span class="n">i</span></div>
+
+
+<div class="viewcode-block" id="compute_dmri_convex_hull"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.compute_dmri_convex_hull">[docs]</a><span class="k">def</span> <span class="nf">compute_dmri_convex_hull</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the convex hull of the dMRI signal s.&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dirs</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+
+    <span class="c1"># Scale the original sampling directions by the corresponding signal values</span>
+    <span class="n">scaled_bvecs</span> <span class="o">=</span> <span class="n">dirs</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">s</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+    <span class="c1"># Create the data for the convex hull: project the scaled vectors to a</span>
+    <span class="c1"># sphere</span>
+    <span class="n">sphere_pts</span><span class="p">,</span> <span class="n">sphere_idx</span> <span class="o">=</span> <span class="n">calculate_sphere_pts</span><span class="p">(</span><span class="n">scaled_bvecs</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Create the convex hull: find the right ordering of vertices for the</span>
+    <span class="c1"># triangles: ConvexHull finds the simplices of the points on the outside of</span>
+    <span class="c1"># the data set</span>
+    <span class="n">hull</span> <span class="o">=</span> <span class="n">ConvexHull</span><span class="p">(</span><span class="n">sphere_pts</span><span class="p">)</span>
+    <span class="n">triang_idx</span> <span class="o">=</span> <span class="n">hull</span><span class="o">.</span><span class="n">simplices</span>  <span class="c1"># returns the list of indices for each triangle</span>
+
+    <span class="k">return</span> <span class="n">scaled_bvecs</span><span class="p">,</span> <span class="n">sphere_idx</span><span class="p">,</span> <span class="n">triang_idx</span></div>
+
+
+<div class="viewcode-block" id="plot_surface"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.plot_surface">[docs]</a><span class="k">def</span> <span class="nf">plot_surface</span><span class="p">(</span><span class="n">scaled_vecs</span><span class="p">,</span> <span class="n">sphere_idx</span><span class="p">,</span> <span class="n">triang_idx</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a surface.&quot;&quot;&quot;</span>
+
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span>
+        <span class="n">scaled_vecs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">scaled_vecs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">scaled_vecs</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span>
+    <span class="p">)</span>
+
+    <span class="n">surface</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_trisurf</span><span class="p">(</span>
+        <span class="n">scaled_vecs</span><span class="p">[</span><span class="n">sphere_idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="n">scaled_vecs</span><span class="p">[</span><span class="n">sphere_idx</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="n">scaled_vecs</span><span class="p">[</span><span class="n">sphere_idx</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+        <span class="n">triangles</span><span class="o">=</span><span class="n">triang_idx</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">,</span> <span class="n">adjustable</span><span class="o">=</span><span class="s2">&quot;box&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">surface</span></div>
+
+
+<div class="viewcode-block" id="plot_signal_data"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.plot_signal_data">[docs]</a><span class="k">def</span> <span class="nf">plot_signal_data</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the data provided as a scatter plot&quot;&quot;&quot;</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">y</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Original points&quot;</span>
+    <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="plot_prediction_surface"><a class="viewcode-back" href="../../../scripts/nifreeze.viz.html#nifreeze.viz.signals.plot_prediction_surface">[docs]</a><span class="k">def</span> <span class="nf">plot_prediction_surface</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">S0</span><span class="p">,</span> <span class="n">y_dirs</span><span class="p">,</span> <span class="n">y_pred_dirs</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">cmap</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot the prediction surface obtained by computing the convex hull of the</span>
+<span class="sd">    predicted signal data, and plot the true data as a scatter plot.&quot;&quot;&quot;</span>
+
+    <span class="c1"># Scale the original sampling directions by the corresponding signal values</span>
+    <span class="n">y_bvecs</span> <span class="o">=</span> <span class="n">y_dirs</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">y</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+
+    <span class="c1"># Compute the convex hull</span>
+    <span class="n">y_pred_bvecs</span><span class="p">,</span> <span class="n">sphere_idx</span><span class="p">,</span> <span class="n">triang_idx</span> <span class="o">=</span> <span class="n">compute_dmri_convex_hull</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_pred_dirs</span><span class="p">)</span>
+
+    <span class="c1"># Plot the surface</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">surface</span> <span class="o">=</span> <span class="n">plot_surface</span><span class="p">(</span><span class="n">y_pred_bvecs</span><span class="p">,</span> <span class="n">sphere_idx</span><span class="p">,</span> <span class="n">triang_idx</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">cmap</span><span class="p">)</span>
+
+    <span class="c1"># Add the underlying signal to the plot</span>
+    <span class="c1"># plot_signal_data(y_bvecs/S0, ax)</span>
+    <span class="n">plot_signal_data</span><span class="p">(</span><span class="n">y_bvecs</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">surface</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ian Goodall-Halliwell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>testrun &mdash; micaflow 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/tabs.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #111111" >
+            <a href="../index.html" class="icon icon-home"> micaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/modules.html">scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/DWIreg.html">DWIreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/N4BiasFieldCorrection.html">N4BiasFieldCorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/calculate_metrics.html">calculate_metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/coregister.html">coregister module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_applytopup.html">dwi_applytopup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_biascorrection.html">dwi_biascorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_compute_fa_md.html">dwi_compute_fa_md module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_denoise.html">dwi_denoise module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_fa_md_registration.html">dwi_fa_md_registration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_linearreg.html">dwi_linearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_motioncorrection.html">dwi_motioncorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_nonlinearreg.html">dwi_nonlinearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/dwi_topup.html">dwi_topup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/hdbet.html">hdbet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/nifreeze.html">nifreeze package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#nifreeze-conftest-module">nifreeze.conftest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#nifreeze-estimator-module">nifreeze.estimator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#nifreeze-estimator-eddy-module">nifreeze.estimator_eddy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#nifreeze-estimator-motion-module">nifreeze.estimator_motion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#module-nifreeze.exceptions">nifreeze.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/nifreeze.html#module-nifreeze">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/runtexture.html">runtexture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/testrun.html">testrun module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/texturepipeline.html">texturepipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/topup_new.html">topup_new module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/use_warp.html">use_warp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts_api.html">Scripts API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #111111" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">micaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">testrun</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for testrun</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<div class="viewcode-block" id="main"><a class="viewcode-back" href="../scripts/testrun.html#testrun.main">[docs]</a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Define input file paths</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">moving_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;/home/ian/GitHub/testdata/sub-HC131_ses-01_acq-b700-41_dir-AP_dwi.nii.gz&quot;</span>
+    <span class="p">)</span>
+    <span class="n">dwi_bval_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;/home/ian/GitHub/testdata/sub-HC131_ses-01_acq-b700-41_dir-AP_dwi.bval&quot;</span>
+    <span class="p">)</span>
+    <span class="n">dwi_bvec_path</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;/home/ian/GitHub/testdata/sub-HC131_ses-01_acq-b700-41_dir-AP_dwi.bvec&quot;</span>
+    <span class="p">)</span>
+    <span class="n">b0_path</span> <span class="o">=</span> <span class="s2">&quot;/home/ian/GitHub/testdata/sub-HC131_ses-01_dir-PA_dwi.nii.gz&quot;</span>
+    <span class="n">b0_bval_path</span> <span class="o">=</span> <span class="s2">&quot;/home/ian/GitHub/testdata/sub-HC131_ses-01_dir-PA_dwi.bval&quot;</span>
+    <span class="n">b0_bvec_path</span> <span class="o">=</span> <span class="s2">&quot;/home/ian/GitHub/testdata/sub-HC131_ses-01_dir-PA_dwi.bvec&quot;</span>
+    <span class="n">atlas_path</span> <span class="o">=</span> <span class="s2">&quot;mni_icbm152_t2_tal_nlin_sym_09a.nii&quot;</span>
+
+    <span class="c1"># Define expected output filenames</span>
+    <span class="n">mask_path</span> <span class="o">=</span> <span class="s2">&quot;mask.nii.gz&quot;</span>
+    <span class="n">denoised_output</span> <span class="o">=</span> <span class="s2">&quot;denoised_moving.nii.gz&quot;</span>
+    <span class="n">motion_corrected_output</span> <span class="o">=</span> <span class="s2">&quot;moving_motion_corrected.nii.gz&quot;</span>
+    <span class="n">warp_output</span> <span class="o">=</span> <span class="s2">&quot;warp.nii.gz&quot;</span>
+    <span class="n">topup_mask_output</span> <span class="o">=</span> <span class="s2">&quot;mask.nii.gz&quot;</span>
+    <span class="n">bias_corrected_output</span> <span class="o">=</span> <span class="s2">&quot;denoised_moving_corrected.nii.gz&quot;</span>
+    <span class="n">linear_reg_output</span> <span class="o">=</span> <span class="s2">&quot;registered.nii.gz&quot;</span>
+    <span class="n">affine_matrix_file</span> <span class="o">=</span> <span class="s2">&quot;reg_affine.txt&quot;</span>
+    <span class="n">fa_map_file</span> <span class="o">=</span> <span class="s2">&quot;fa_map.nii.gz&quot;</span>
+    <span class="n">md_map_file</span> <span class="o">=</span> <span class="s2">&quot;md_map.nii.gz&quot;</span>
+    <span class="n">nonlinear_forward_warp</span> <span class="o">=</span> <span class="s2">&quot;backward_MNI_warp.nii.gz&quot;</span>
+
+    <span class="c1"># Step 1: Denoise</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_denoise.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_denoise.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--moving&quot;</span><span class="p">,</span> <span class="n">moving_path</span><span class="p">,</span>
+        <span class="s2">&quot;--bval&quot;</span><span class="p">,</span> <span class="n">dwi_bval_path</span><span class="p">,</span>
+        <span class="s2">&quot;--bvec&quot;</span><span class="p">,</span> <span class="n">dwi_bvec_path</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 2: Motion Correction on denoised image</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_motioncorrection.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_motioncorrection.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--denoised&quot;</span><span class="p">,</span> <span class="n">denoised_output</span><span class="p">,</span>
+        <span class="s2">&quot;--bval&quot;</span><span class="p">,</span> <span class="n">dwi_bval_path</span><span class="p">,</span>
+        <span class="s2">&quot;--bvec&quot;</span><span class="p">,</span> <span class="n">dwi_bvec_path</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 3: Compute topup (warp field and mask)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_topup.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_topup.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--moving&quot;</span><span class="p">,</span> <span class="n">moving_path</span><span class="p">,</span>
+        <span class="s2">&quot;--b0&quot;</span><span class="p">,</span> <span class="n">b0_path</span><span class="p">,</span>
+        <span class="s2">&quot;--b0_bval&quot;</span><span class="p">,</span> <span class="n">b0_bval_path</span><span class="p">,</span>
+        <span class="s2">&quot;--b0_bvec&quot;</span><span class="p">,</span> <span class="n">b0_bvec_path</span><span class="p">,</span>
+        <span class="s2">&quot;--warp_out&quot;</span><span class="p">,</span> <span class="n">warp_output</span><span class="p">,</span>
+        <span class="s2">&quot;--mask_out&quot;</span><span class="p">,</span> <span class="n">topup_mask_output</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 4: Apply Topup Correction using the warp field</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_applytopup.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_applytopup.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--motion_corr&quot;</span><span class="p">,</span> <span class="n">motion_corrected_output</span><span class="p">,</span>
+        <span class="s2">&quot;--warp&quot;</span><span class="p">,</span> <span class="n">warp_output</span><span class="p">,</span>
+        <span class="s2">&quot;--affine&quot;</span><span class="p">,</span> <span class="n">moving_path</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 5: Bias Field Correction</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_biascorrection.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_biascorrection.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--image&quot;</span><span class="p">,</span> <span class="n">denoised_output</span><span class="p">,</span>
+        <span class="s2">&quot;--mask&quot;</span><span class="p">,</span> <span class="n">topup_mask_output</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 6: Linear Registration to Atlas</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_linearreg.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_linearreg.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--bias_corr&quot;</span><span class="p">,</span> <span class="n">bias_corrected_output</span><span class="p">,</span>
+        <span class="s2">&quot;--bval&quot;</span><span class="p">,</span> <span class="n">dwi_bval_path</span><span class="p">,</span>
+        <span class="s2">&quot;--bvec&quot;</span><span class="p">,</span> <span class="n">dwi_bvec_path</span><span class="p">,</span>
+        <span class="s2">&quot;--atlas&quot;</span><span class="p">,</span> <span class="n">atlas_path</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 7: Nonlinear Registration</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_nonlinearreg.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_nonlinearreg.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--atlas&quot;</span><span class="p">,</span> <span class="n">atlas_path</span><span class="p">,</span>
+        <span class="s2">&quot;--fixed&quot;</span><span class="p">,</span> <span class="n">linear_reg_output</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 8: Compute FA and MD maps</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_compute_fa_md.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s2">&quot;dwi_compute_fa_md.py&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;--bias_corr&quot;</span><span class="p">,</span> <span class="n">bias_corrected_output</span><span class="p">,</span>
+        <span class="s2">&quot;--mask&quot;</span><span class="p">,</span> <span class="n">mask_path</span><span class="p">,</span>
+        <span class="s2">&quot;--bval&quot;</span><span class="p">,</span> <span class="n">dwi_bval_path</span><span class="p">,</span>
+        <span class="s2">&quot;--bvec&quot;</span><span class="p">,</span> <span class="n">dwi_bvec_path</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Step 9: Register FA/MD maps into MNI space</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running dwi_fa_md_registration.py ...&quot;</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span>
+            <span class="s2">&quot;dwi_fa_md_registration.py&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;--fa&quot;</span><span class="p">,</span>
+            <span class="n">fa_map_file</span><span class="p">,</span>
+            <span class="s2">&quot;--md&quot;</span><span class="p">,</span>
+            <span class="n">md_map_file</span><span class="p">,</span>
+            <span class="s2">&quot;--atlas&quot;</span><span class="p">,</span>
+            <span class="n">atlas_path</span><span class="p">,</span>
+            <span class="s2">&quot;--reg_affine&quot;</span><span class="p">,</span>
+            <span class="n">affine_matrix_file</span><span class="p">,</span>
+            <span class="s2">&quot;--mapping&quot;</span><span class="p">,</span>
+            <span class="n">nonlinear_forward_warp</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total processing time: </span><span class="si">{</span><span class="n">end</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;All processing steps complete.&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ian Goodall-Halliwell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

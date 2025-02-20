@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nifreeze.utils package &mdash; micaflow 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nifreeze.viz package" href="nifreeze.viz.html" />
+    <link rel="prev" title="nifreeze.testing package" href="nifreeze.testing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #111111" >
+            <a href="../index.html" class="icon icon-home"> micaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">scripts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DWIreg.html">DWIreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="N4BiasFieldCorrection.html">N4BiasFieldCorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculate_metrics.html">calculate_metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coregister.html">coregister module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_applytopup.html">dwi_applytopup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_biascorrection.html">dwi_biascorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_compute_fa_md.html">dwi_compute_fa_md module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_denoise.html">dwi_denoise module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_fa_md_registration.html">dwi_fa_md_registration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_linearreg.html">dwi_linearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_motioncorrection.html">dwi_motioncorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_nonlinearreg.html">dwi_nonlinearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_topup.html">dwi_topup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdbet.html">hdbet module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="nifreeze.html">nifreeze package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="nifreeze.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-conftest-module">nifreeze.conftest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-module">nifreeze.estimator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-eddy-module">nifreeze.estimator_eddy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-motion-module">nifreeze.estimator_motion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#module-nifreeze.exceptions">nifreeze.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#module-nifreeze">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="runtexture.html">runtexture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testrun.html">testrun module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texturepipeline.html">texturepipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topup_new.html">topup_new module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use_warp.html">use_warp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts_api.html">Scripts API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #111111" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">micaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">scripts</a></li>
+          <li class="breadcrumb-item"><a href="nifreeze.html">nifreeze package</a></li>
+      <li class="breadcrumb-item active">nifreeze.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scripts/nifreeze.utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="nifreeze-utils-package">
+<h1>nifreeze.utils package<a class="headerlink" href="#nifreeze-utils-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-nifreeze.utils.iterators">
+<span id="nifreeze-utils-iterators-module"></span><h2>nifreeze.utils.iterators module<a class="headerlink" href="#module-nifreeze.utils.iterators" title="Permalink to this headline"></a></h2>
+<p>Iterators to traverse the volumes in a 4D image.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.utils.iterators.bvalue_iterator">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.utils.iterators.</span></span><span class="sig-name descname"><span class="pre">bvalue_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/nifreeze/utils/iterators.html#bvalue_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.utils.iterators.bvalue_iterator" title="Permalink to this definition"></a></dt>
+<dd><p>Traverse the volumes in a DWI dataset by growing b-value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>bvals</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – List of b-values corresponding to all orientations of the dataset.
+Please note that <code class="docutils literal notranslate"><span class="pre">bvals</span></code> is a keyword argument and MUST be provided
+to generate the volume sequence.</p>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> – The next index.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">bvalue_iterator</span><span class="p">(</span><span class="n">bvals</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="mf">700.0</span><span class="p">,</span> <span class="mf">700.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]))</span>
+<span class="go">[0, 1, 8, 4, 5, 2, 3, 6, 7]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.utils.iterators.centralsym_iterator">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.utils.iterators.</span></span><span class="sig-name descname"><span class="pre">centralsym_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/nifreeze/utils/iterators.html#centralsym_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.utils.iterators.centralsym_iterator" title="Permalink to this definition"></a></dt>
+<dd><p>Traverse the dataset starting from the center and alternatingly progressing to the sides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional) – Number of volumes in the dataset.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code> will be inferred from the <code class="docutils literal notranslate"><span class="pre">bvals</span></code> keyword argument.</p></li>
+<li><p><strong>bvals</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional (keyword argument)) – List of b-values corresponding to all orientations of the dataset.
+If <code class="docutils literal notranslate"><span class="pre">size</span></code> is provided, this argument will be ignored.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">size</span></code> will be inferred from the length of <code class="docutils literal notranslate"><span class="pre">bvals</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> – The next index.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">centralsym_iterator</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[5, 4, 6, 3, 7, 2, 8, 1, 9, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">centralsym_iterator</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
+<span class="go">[5, 4, 6, 3, 7, 2, 8, 1, 9, 0, 10]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.utils.iterators.linear_iterator">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.utils.iterators.</span></span><span class="sig-name descname"><span class="pre">linear_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/nifreeze/utils/iterators.html#linear_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.utils.iterators.linear_iterator" title="Permalink to this definition"></a></dt>
+<dd><p>Traverse the dataset volumes in ascending order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional) – Number of volumes in the dataset.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code> will be inferred from the <code class="docutils literal notranslate"><span class="pre">bvals</span></code> keyword argument.</p></li>
+<li><p><strong>bvals</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional (keyword argument)) – List of b-values corresponding to all orientations of a DWI dataset.
+If <code class="docutils literal notranslate"><span class="pre">size</span></code> is provided, this argument will be ignored.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">size</span></code> will be inferred from the length of <code class="docutils literal notranslate"><span class="pre">bvals</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> – The next index.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">linear_iterator</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.utils.iterators.random_iterator">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.utils.iterators.</span></span><span class="sig-name descname"><span class="pre">random_iterator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/nifreeze/utils/iterators.html#random_iterator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.utils.iterators.random_iterator" title="Permalink to this definition"></a></dt>
+<dd><p>Traverse the dataset volumes randomly.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">seed</span></code> key is present in the keyword arguments, initializes the seed
+of Python’s <code class="docutils literal notranslate"><span class="pre">random</span></code> pseudo-random number generator library with the given
+value. Specifically, if <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> is used as the seed; if <code class="docutils literal notranslate"><span class="pre">True</span></code>, a
+default seed value is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional) – Number of volumes in the dataset.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">size</span></code> will be inferred from the <code class="docutils literal notranslate"><span class="pre">bvals</span></code> keyword argument.</p></li>
+<li><p><strong>bvals</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, optional (keyword argument)) – List of b-values corresponding to all orientations of a DWI dataset.
+If <code class="docutils literal notranslate"><span class="pre">size</span></code> is provided, this argument will be ignored.
+Otherwise, <code class="docutils literal notranslate"><span class="pre">size</span></code> will be inferred from the length of <code class="docutils literal notranslate"><span class="pre">bvals</span></code>.</p></li>
+<li><p><strong>seed</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code>, optional (keyword argument)) – If <code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> or <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>, initializes the seed of Python’s random generator
+with the given value.
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the random generator is passed <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">True</span></code>, a default seed value is set.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code> – The next index.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">random_iterator</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>  <span class="c1"># seed is 0</span>
+<span class="go">[1, 10, 9, 5, 11, 2, 3, 7, 8, 4, 0, 14, 12, 6, 13]</span>
+<span class="gp">&gt;&gt;&gt; </span> <span class="c1"># seed is True -&gt; the default value 20210324 is set</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">random_iterator</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">[1, 12, 14, 5, 0, 11, 10, 9, 7, 8, 3, 13, 2, 6, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">random_iterator</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">20210324</span><span class="p">))</span>
+<span class="go">[1, 12, 14, 5, 0, 11, 10, 9, 7, 8, 3, 13, 2, 6, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">random_iterator</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">))</span>  <span class="c1"># seed is 42</span>
+<span class="go">[8, 13, 7, 6, 14, 12, 5, 2, 9, 3, 4, 11, 0, 1, 10]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-nifreeze.utils.ndimage">
+<span id="nifreeze-utils-ndimage-module"></span><h2>nifreeze.utils.ndimage module<a class="headerlink" href="#module-nifreeze.utils.ndimage" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="nifreeze.utils.ndimage.load_api">
+<span class="sig-prename descclassname"><span class="pre">nifreeze.utils.ndimage.</span></span><span class="sig-name descname"><span class="pre">load_api</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">os.PathLike</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><span class="pre">ImgT</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">nifreeze.utils.ndimage.ImgT</span></span></span><a class="reference internal" href="../_modules/nifreeze/utils/ndimage.html#load_api"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#nifreeze.utils.ndimage.load_api" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-nifreeze.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-nifreeze.utils" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="nifreeze.testing.html" class="btn btn-neutral float-left" title="nifreeze.testing package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nifreeze.viz.html" class="btn btn-neutral float-right" title="nifreeze.viz package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ian Goodall-Halliwell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

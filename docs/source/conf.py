@@ -5,6 +5,11 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../../scripts'))
+sys.path.insert(0, os.path.abspath('../..'))  # Add project root
+
 
 project = 'micaflow'
 copyright = '2025, Ian Goodall-Halliwell'
@@ -27,7 +32,7 @@ extensions = ['sphinx_tabs.tabs',
               ]
 
 templates_path = ['_templates']
-
+autosummary_generate = True  
 master_doc = 'index'
 
 exclude_patterns = []
@@ -37,5 +42,16 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = 'sphinx_rtd_theme'
+
+html_theme_options = {
+    'style_nav_header_background': '#111111',
+    'logo_only': True,
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 3,
+    'includehidden': True,
+    'titles_only': False,
+    'style_external_links': True,
+    'display_version': False
+}

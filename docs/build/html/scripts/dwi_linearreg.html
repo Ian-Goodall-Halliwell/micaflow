@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dwi_linearreg module &mdash; micaflow 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/tabs.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dwi_motioncorrection module" href="dwi_motioncorrection.html" />
+    <link rel="prev" title="dwi_fa_md_registration module" href="dwi_fa_md_registration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #111111" >
+            <a href="../index.html" class="icon icon-home"> micaflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">scripts</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="DWIreg.html">DWIreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="N4BiasFieldCorrection.html">N4BiasFieldCorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculate_metrics.html">calculate_metrics module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coregister.html">coregister module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_applytopup.html">dwi_applytopup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_biascorrection.html">dwi_biascorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_compute_fa_md.html">dwi_compute_fa_md module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_denoise.html">dwi_denoise module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_fa_md_registration.html">dwi_fa_md_registration module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">dwi_linearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_motioncorrection.html">dwi_motioncorrection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_nonlinearreg.html">dwi_nonlinearreg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dwi_topup.html">dwi_topup module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hdbet.html">hdbet module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nifreeze.html">nifreeze package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#subpackages">Subpackages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-conftest-module">nifreeze.conftest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-module">nifreeze.estimator module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-eddy-module">nifreeze.estimator_eddy module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#nifreeze-estimator-motion-module">nifreeze.estimator_motion module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#module-nifreeze.exceptions">nifreeze.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nifreeze.html#module-nifreeze">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="runtexture.html">runtexture module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testrun.html">testrun module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="texturepipeline.html">texturepipeline module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topup_new.html">topup_new module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use_warp.html">use_warp module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts_api.html">Scripts API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #111111" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">micaflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">scripts</a></li>
+      <li class="breadcrumb-item active">dwi_linearreg module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/scripts/dwi_linearreg.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="dwi-linearreg-module">
+<h1>dwi_linearreg module<a class="headerlink" href="#dwi-linearreg-module" title="Permalink to this headline"></a></h1>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dwi_fa_md_registration.html" class="btn btn-neutral float-left" title="dwi_fa_md_registration module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dwi_motioncorrection.html" class="btn btn-neutral float-right" title="dwi_motioncorrection module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Ian Goodall-Halliwell.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
