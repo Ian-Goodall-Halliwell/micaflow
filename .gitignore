@@ -5,3 +5,4 @@ docs/_templates/*
 data/
 scripts/models/*
 *.h5
+/work/*
