@@ -418,6 +418,14 @@ process RunTexture {
 }
 
 workflow {
+    // Construct expected file paths for the anatomical images
+    def t1wPath = "${params.data_directory}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_run-1_T1w.nii.gz"
+    def flairPath = "${params.data_directory}/${params.subject}/${params.session}/anat/${params.subject}_${params.session}_FLAIR.nii.gz"
+
+    // Check if the files exist
+    if( !new File(t1wPath).exists() || !new File(flairPath).exists() ) {
+        exit 1, "Missing input image(s):\n  T1w: ${t1wPath}\n  FLAIR: ${flairPath}"
+    }
     // Validate required parameters
     if (!params.subject || !params.session || !params.out_dir || !params.threads || !params.data_directory) {
         exit 1, """
