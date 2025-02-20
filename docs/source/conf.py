@@ -29,6 +29,7 @@ extensions = ['sphinx_tabs.tabs',
 templates_path = ['_templates']
 
 master_doc = 'index'
+
 exclude_patterns = []
 
 
