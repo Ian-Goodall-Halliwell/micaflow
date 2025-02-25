@@ -1,0 +1,171 @@
+Feb-25 17:12:14.863 [main] DEBUG nextflow.cli.Launcher - $> nextflow run micaflow.nf --subject sub-HC131 --session ses-01 --out_dir /home/ian/output --data_directory /home/ian/GitHub/data --threads 1 -profile conda
+Feb-25 17:12:14.999 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.2
+Feb-25 17:12:15.012 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/ian/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.2,nf-tower@1.9.3,nf-wave@1.7.4
+Feb-25 17:12:15.029 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Feb-25 17:12:15.030 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Feb-25 17:12:15.032 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Feb-25 17:12:15.043 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Feb-25 17:12:15.068 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/ian/.nextflow/secrets/store.json
+Feb-25 17:12:15.075 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@378bd86d] - activable => nextflow.secret.LocalSecretsProvider@378bd86d
+Feb-25 17:12:15.110 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+Feb-25 17:12:15.124 [main] DEBUG nextflow.cli.CmdRun - Launching `micaflow.nf` [trusting_descartes] DSL2 - revision: af31edd056
+Feb-25 17:12:15.126 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Feb-25 17:12:15.126 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Feb-25 17:12:15.166 [main] DEBUG nextflow.Session - Session UUID: c379bd6c-5dbc-43f3-94f1-17ed19558aa2
+Feb-25 17:12:15.166 [main] DEBUG nextflow.Session - Run name: trusting_descartes
+Feb-25 17:12:15.167 [main] DEBUG nextflow.Session - Executor pool size: 24
+Feb-25 17:12:15.171 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Feb-25 17:12:15.174 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-25 17:12:15.188 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.2 build 5932
+  Created: 27-11-2024 21:23 UTC (16:23 EDT)
+  System: Linux 5.15.167.4-microsoft-standard-WSL2
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 21.0.6+7-Ubuntu-124.04.1
+  Encoding: UTF-8 (UTF-8)
+  Process: 133623@Computinator [127.0.1.1]
+  CPUs: 24 - Mem: 31.3 GB (19.1 GB) - Swap: 8 GB (8 GB)
+Feb-25 17:12:15.206 [main] DEBUG nextflow.Session - Work-dir: /home/ian/GitHub/micaflow/work [ext2/ext3]
+Feb-25 17:12:15.206 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/ian/GitHub/micaflow/bin
+Feb-25 17:12:15.212 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Feb-25 17:12:15.216 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Feb-25 17:12:15.234 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Feb-25 17:12:15.239 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 25; maxThreads: 1000
+Feb-25 17:12:15.278 [main] DEBUG nextflow.Session - Session start
+Feb-25 17:12:16.236 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Feb-25 17:12:16.335 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.335 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.339 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Feb-25 17:12:16.344 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=24; memory=31.3 GB; capacity=24; pollInterval=100ms; dumpInterval=5m
+Feb-25 17:12:16.345 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Feb-25 17:12:16.389 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.389 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.405 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.405 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.410 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.411 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.431 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.431 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.443 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.443 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.451 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.451 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.459 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.459 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.481 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.482 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.487 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.488 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.492 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.492 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.499 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.499 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.504 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.505 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.509 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.509 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.515 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.515 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.521 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Feb-25 17:12:16.521 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Feb-25 17:12:16.526 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: DwiApplyTopup, ApplyWarpFLAIRtoT1w, DwiRegistration, DwiLinearReg, CalculateMetrics, DwiTopup, ApplyWarp, DwiComputeFaMd, DwiDenoise, SkullStrip, RunTexture, BiasFieldCorrection, DwiFaMdRegistration, DwiMotionCorrection, DwiBiasCorrection, Registration_MNI152, Registration_T1w, DwiNonlinearReg
+Feb-25 17:12:16.527 [main] DEBUG nextflow.Session - Igniting dataflow network (23)
+Feb-25 17:12:16.527 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SkullStrip
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BiasFieldCorrection
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Registration_T1w
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > Registration_MNI152
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ApplyWarpFLAIRtoT1w
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ApplyWarp
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RunTexture
+Feb-25 17:12:16.528 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > CalculateMetrics
+Feb-25 17:12:16.532 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ian/GitHub/data/sub-HC131/ses-01/dwi/; pattern: *.nii.gz; options: [:]
+Feb-25 17:12:16.532 [PathVisitor-2] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ian/GitHub/data/sub-HC131/ses-01/dwi/; pattern: *.bvec; options: [:]
+Feb-25 17:12:16.532 [PathVisitor-3] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ian/GitHub/data/sub-HC131/ses-01/dwi/; pattern: *.bval; options: [:]
+Feb-25 17:12:16.543 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiTopup
+Feb-25 17:12:16.543 [PathVisitor-6] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ian/GitHub/data/sub-HC131/ses-01/dwi/; pattern: *.bval; options: [:]
+Feb-25 17:12:16.543 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiDenoise
+Feb-25 17:12:16.543 [PathVisitor-4] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ian/GitHub/data/sub-HC131/ses-01/dwi/; pattern: *.nii.gz; options: [:]
+Feb-25 17:12:16.543 [PathVisitor-5] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/ian/GitHub/data/sub-HC131/ses-01/dwi/; pattern: *.bvec; options: [:]
+Feb-25 17:12:16.543 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiMotionCorrection
+Feb-25 17:12:16.544 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiApplyTopup
+Feb-25 17:12:16.544 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiBiasCorrection
+Feb-25 17:12:16.544 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiRegistration
+Feb-25 17:12:16.544 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiComputeFaMd
+Feb-25 17:12:16.544 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DwiFaMdRegistration
+Feb-25 17:12:16.545 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_334b75b8c9fa207b: /home/ian/GitHub/micaflow/micaflow.nf
+Feb-25 17:12:16.545 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Feb-25 17:12:16.545 [main] DEBUG nextflow.Session - Session await
+Feb-25 17:12:16.662 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:16.663 [Task submitter] INFO  nextflow.Session - [d6/f5f9ef] Submitted process > DwiDenoise (1)
+Feb-25 17:12:16.670 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:16.670 [Task submitter] INFO  nextflow.Session - [a0/b1d5e5] Submitted process > Registration_T1w (1)
+Feb-25 17:12:16.675 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:16.675 [Task submitter] INFO  nextflow.Session - [c2/291541] Submitted process > SkullStrip (1)
+Feb-25 17:12:16.679 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:16.680 [Task submitter] INFO  nextflow.Session - [1e/6918c4] Submitted process > DwiTopup (1)
+Feb-25 17:12:16.683 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:16.683 [Task submitter] INFO  nextflow.Session - [ae/5a5e0e] Submitted process > SkullStrip (2)
+Feb-25 17:12:16.686 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:16.687 [Task submitter] INFO  nextflow.Session - [e5/d04678] Submitted process > Registration_MNI152 (1)
+Feb-25 17:12:55.866 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: SkullStrip (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/ae/5a5e0eae0abcc8b44d56e28aa5f35a]
+Feb-25 17:12:55.869 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-25 17:12:55.971 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=72; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Feb-25 17:12:56.012 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:12:56.027 [Task submitter] INFO  nextflow.Session - [0f/cceb2e] Submitted process > BiasFieldCorrection (1)
+Feb-25 17:13:07.351 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: Registration_MNI152 (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/e5/d0467866957941f0a755ae0498657b]
+Feb-25 17:13:10.115 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: SkullStrip (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/c2/2915414f95f7e9801f928791f0388c]
+Feb-25 17:13:10.173 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:10.176 [Task submitter] INFO  nextflow.Session - [45/eb23e0] Submitted process > BiasFieldCorrection (2)
+Feb-25 17:13:16.775 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: BiasFieldCorrection (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/0f/cceb2e280b9d03ae5c1f58f46b363b]
+Feb-25 17:13:30.911 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: BiasFieldCorrection (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/45/eb23e0766c378e67fefb4aeb2a6132]
+Feb-25 17:13:30.929 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:30.929 [Task submitter] INFO  nextflow.Session - [f6/2ac189] Submitted process > ApplyWarp (1)
+Feb-25 17:13:32.552 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: ApplyWarp (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/f6/2ac189f67fee76ab863ae3f936419e]
+Feb-25 17:13:32.570 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:32.570 [Task submitter] INFO  nextflow.Session - [a2/64fe4b] Submitted process > RunTexture (1)
+Feb-25 17:13:32.573 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:32.573 [Task submitter] INFO  nextflow.Session - [00/9e812c] Submitted process > CalculateMetrics (1)
+Feb-25 17:13:37.963 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: DwiDenoise (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/d6/f5f9ef2c6852eeccf218061ccdafc7]
+Feb-25 17:13:37.982 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:37.983 [Task submitter] INFO  nextflow.Session - [ff/ea030b] Submitted process > DwiMotionCorrection (1)
+Feb-25 17:13:38.981 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: Registration_T1w (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/a0/b1d5e5705e1bda28e81eb73ba8ed0d]
+Feb-25 17:13:39.002 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:39.003 [Task submitter] INFO  nextflow.Session - [7c/755ed3] Submitted process > ApplyWarpFLAIRtoT1w (1)
+Feb-25 17:13:41.814 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: ApplyWarpFLAIRtoT1w (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/7c/755ed363535727212cc0ca8f5788e1]
+Feb-25 17:13:41.834 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:41.835 [Task submitter] INFO  nextflow.Session - [6a/09f380] Submitted process > ApplyWarp (2)
+Feb-25 17:13:44.148 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: ApplyWarp (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/6a/09f380958fa27d3c83316216402680]
+Feb-25 17:13:44.171 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:44.172 [Task submitter] INFO  nextflow.Session - [37/ecc321] Submitted process > CalculateMetrics (2)
+Feb-25 17:13:44.174 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:13:44.174 [Task submitter] INFO  nextflow.Session - [d5/3829e0] Submitted process > RunTexture (2)
+Feb-25 17:13:50.809 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: RunTexture (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/a2/64fe4b44031a05c9ed0824d81770c5]
+Feb-25 17:14:03.839 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: RunTexture (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/d5/3829e0e856b75cb58c557c577e37fa]
+Feb-25 17:14:06.060 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: CalculateMetrics (2); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/37/ecc321029b30ede3e21aa3296da927]
+Feb-25 17:14:43.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: CalculateMetrics (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/00/9e812c654e4930435648260e868b39]
+Feb-25 17:15:23.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: DwiMotionCorrection (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/ff/ea030b55000ec7b145d1fff9ea502f]
+Feb-25 17:15:39.551 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: DwiTopup (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/1e/6918c4b1d7f0aa958bbc7068d038e4]
+Feb-25 17:15:39.560 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:15:39.560 [Task submitter] INFO  nextflow.Session - [0d/aec78c] Submitted process > DwiApplyTopup (1)
+Feb-25 17:15:57.372 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: DwiApplyTopup (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/0d/aec78c6174d29fb25282e694115387]
+Feb-25 17:15:57.380 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:15:57.380 [Task submitter] INFO  nextflow.Session - [c7/c81b6c] Submitted process > DwiBiasCorrection (1)
+Feb-25 17:15:57.385 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:15:57.385 [Task submitter] INFO  nextflow.Session - [ca/70cc87] Submitted process > DwiRegistration (1)
+Feb-25 17:16:27.111 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: DwiRegistration (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/ca/70cc87aa939e3ef3ce692a803ead85]
+Feb-25 17:16:41.789 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: DwiBiasCorrection (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/c7/c81b6c07fc99c85d28635d846f2b63]
+Feb-25 17:16:41.800 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:16:41.801 [Task submitter] INFO  nextflow.Session - [2f/9a109f] Submitted process > DwiComputeFaMd (1)
+Feb-25 17:17:07.669 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: DwiComputeFaMd (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/2f/9a109f21c09202b09baef45ec00cdb]
+Feb-25 17:17:07.678 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Feb-25 17:17:07.678 [Task submitter] INFO  nextflow.Session - [af/d64167] Submitted process > DwiFaMdRegistration (1)
+Feb-25 17:17:11.432 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: DwiFaMdRegistration (1); status: COMPLETED; exit: 0; error: -; workDir: /home/ian/GitHub/micaflow/work/af/d641679548debfcb874df8e583956b]
+Feb-25 17:17:11.434 [main] DEBUG nextflow.Session - Session await > all processes finished
+Feb-25 17:17:11.533 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Feb-25 17:17:11.533 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Feb-25 17:17:11.535 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Feb-25 17:17:11.536 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Feb-25 17:17:11.538 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=21; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=15m 14s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=6; peakCpus=6; peakMemory=0; ]
+Feb-25 17:17:11.633 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Feb-25 17:17:11.648 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Feb-25 17:17:11.648 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

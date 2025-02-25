@@ -129,6 +129,31 @@ process DwiBiasCorrection {
         --mask ${mask_path}
     """
 }
+process DwiRegistration {
+    conda "envs/micaflow.yml"
+    publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
+
+    input:
+    tuple val(movingType), path(movingImage)
+    tuple val(fixedType), path(fixedImage)
+    
+
+    output:
+        path "*_fwdfield.nii.gz"
+        path "*_fwdaffine.mat"
+
+
+    script:
+    """
+    python3 ${workflow.projectDir}/scripts/dwi_reg.py \
+        --fixed ${fixedImage} \
+        --moving ${movingImage} \
+        --affine ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_fwdaffine.mat \
+        --rev_affine ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_bakaffine.mat \
+        --warpfield ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_fwdfield.nii.gz \
+        --rev_warpfield ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_bakfield.nii.gz
+    """
+}
 
 // ------------------------------------------------------------------
 // 6. Linear Registration
@@ -365,7 +390,7 @@ process SkullStrip {
     
     output:
     tuple val(type), path("${type}_hdbet.nii.gz") 
-    path "${type}_hdbet_mask.nii.gz"
+    path "${type}_hdbet_bet.nii.gz"
     
     script:
     """
@@ -585,6 +610,8 @@ workflow {
             b0_bvecs
         )
 
+
+
         // 1) Denoise
         denoised_out = DwiDenoise(
             input_dwi,
@@ -608,23 +635,15 @@ workflow {
 
         // 5) Bias Correction
         bias_corr = DwiBiasCorrection(
-            denoised_out,
+            topup_applied,
             topup_out.map{ it[2] } // mask
         )
 
-        // 6) Linear Registration
-        lin_reg = DwiLinearReg(
-            bias_corr,
-            input_bval,
-            input_bvec,
-            n4_out.filter { it[0] == 'T1w' }.map { it[1] } // Use N4-corrected T1w image
+        (lin_reg, nonlin_reg) = DwiRegistration(
+            topup_applied,
+            n4_out.filter { it[0] == 'T1w' }
         )
 
-        // 7) Nonlinear Registration
-        nonlin_reg = DwiNonlinearReg(
-            lin_reg.map { tuple(it[0], it[1]) },
-            n4_out.filter { it[0] == 'T1w' }.map { it[1] } // Use N4-corrected T1w image
-        )
 
         // 8) Compute FA/MD
         fa_md = DwiComputeFaMd(
@@ -637,9 +656,9 @@ workflow {
         // 9) FA/MD Registration
         fa_md_registered = DwiFaMdRegistration(
             fa_md,
-            n4_out.filter { it[0] == 'T1w' }.map { it[1] }, // Use N4-corrected T1w image
-            lin_reg.map { it[2] },     // reg_affine.txt
-            nonlin_reg.map { it[1] }   // backward_MNI_warp.nii.gz
+            n4_out.filter { it[0] == 'T1w' }.map { it[1] },
+            lin_reg,     
+            nonlin_reg   
         )
 
         fa_md_registered.view()

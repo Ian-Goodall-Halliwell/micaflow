@@ -7,9 +7,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output", "-o", required=True, help="Output corrected image file"
     )
-    parser.add_argument("-m", "--mask", help="Save binary brain mask to path.")
     args = parser.parse_args()
     subprocess.run(
-        "hd-bet -i " + args.input + " -o " + args.output + " -device cpu",
+        "hd-bet -i "
+        + args.input
+        + " -o "
+        + args.output
+        + " --save_bet_mask",  # + " -device cpu",
         shell=True,
     )
