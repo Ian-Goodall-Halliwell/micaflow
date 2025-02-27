@@ -21,7 +21,7 @@ def ants_linear_nonlinear_registration(
     moving = ants.image_read(moving_file)
 
     # 'SyN' transform includes both linear and nonlinear registration.
-    transforms = ants.registration(fixed=fixed, moving=moving, type_of_transform="SyN")
+    transforms = ants.registration(fixed=fixed, moving=moving, type_of_transform="SyNRA")
 
     # The result of the registration is a dictionary containing, among other keys:
     # 'warpedmovout' and 'fwdtransforms' (list of transform paths generated).

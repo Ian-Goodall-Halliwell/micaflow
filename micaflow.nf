@@ -6,11 +6,27 @@ params.out_dir = ''
 params.threads = ''
 params.data_directory = ''
 params.run_dwi = true // Toggle for running DWI processing, set via `--run_dwi false` to skip.
+params.cleanup = true
+
+// 2) Add a CleanupWorkDir process at the bottom of your file
+process CleanupWorkDir {
+    // Only run if params.cleanup == true
+    
+
+    input:
+    tuple val(type), path(temp), path(temp2)
+    path temp3
+    
+    when:
+    params.cleanup
+    script:
+    """
+    echo "Cleaning up work directory..."
+    rm -rf ${workflow.projectDir}/work/
+    """
+}
 
 
-// ------------------------------------------------------------------
-// 1. Denoise
-// ------------------------------------------------------------------
 process DwiDenoise {
     conda "envs/micaflow.yml"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/dwi", mode: 'copy'
@@ -32,13 +48,10 @@ process DwiDenoise {
     """
 }
 
-// ------------------------------------------------------------------
-// 2. Motion Correction
-// ------------------------------------------------------------------
+
 process DwiMotionCorrection {
     conda "envs/micaflow.yml"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/dwi", mode: 'copy'
-
     input:
     tuple val(type), path(denoised_output)
     path dwi_bval
@@ -56,9 +69,6 @@ process DwiMotionCorrection {
     """
 }
 
-// ------------------------------------------------------------------
-// 3. Compute Topup (Warp Field + Mask)
-// ------------------------------------------------------------------
 process DwiTopup {
     conda "envs/micaflow.yml"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
@@ -70,17 +80,14 @@ process DwiTopup {
     path b0_bvec
 
     output:
-    tuple val(type), path("warp.nii.gz"), path("mask.nii.gz")
+    tuple val(type), path("topup-warp-EstFieldMap.nii.gz"), path("corrected_image.nii.gz")
 
     script:
     """
-    python3 ${workflow.projectDir}/scripts/dwi_topup.py \
-        --moving ${moving_path} \
-        --b0 ${b0_path} \
-        --b0_bval ${b0_bval} \
-        --b0_bvec ${b0_bvec} \
-        --warp_out warp.nii.gz \
-        --mask_out mask.nii.gz
+    python3 ${workflow.projectDir}/scripts/pyhysco.py \
+        --data_image ${moving_path} \
+        --reverse_image ${b0_path} \
+        --output_name "corrected_image.nii.gz" 
     """
 }
 
@@ -134,7 +141,7 @@ process DwiRegistration {
     publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
 
     input:
-    tuple val(movingType), path(movingImage)
+        path movingImage
     tuple val(fixedType), path(fixedImage)
     
 
@@ -148,66 +155,13 @@ process DwiRegistration {
     python3 ${workflow.projectDir}/scripts/dwi_reg.py \
         --fixed ${fixedImage} \
         --moving ${movingImage} \
-        --affine ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_fwdaffine.mat \
-        --rev_affine ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_bakaffine.mat \
-        --warpfield ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_fwdfield.nii.gz \
-        --rev_warpfield ${params.subject}_${params.session}_from-${movingType}_to-${fixedType}_bakfield.nii.gz
+        --affine ${params.subject}_${params.session}_from-DWI_to-${fixedType}_fwdaffine.mat \
+        --rev_affine ${params.subject}_${params.session}_from-DWI_to-${fixedType}_bakaffine.mat \
+        --warpfield ${params.subject}_${params.session}_from-DWI_to-${fixedType}_fwdfield.nii.gz \
+        --rev_warpfield ${params.subject}_${params.session}_from-DWI_to-${fixedType}_bakfield.nii.gz
     """
 }
 
-// ------------------------------------------------------------------
-// 6. Linear Registration
-// ------------------------------------------------------------------
-process DwiLinearReg {
-    conda "envs/micaflow.yml"
-    publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
-
-    input:
-    tuple val(type), path(bias_corrected)
-    path dwi_bval
-    path dwi_bvec
-    path atlas
-
-    output:
-    tuple val(type), path("registered.nii.gz"), path("reg_affine.txt")
-
-    script:
-    """
-    python3 ${workflow.projectDir}/scripts/dwi_linearreg.py \
-        --bias_corr ${bias_corrected} \
-        --bval ${dwi_bval} \
-        --bvec ${dwi_bvec} \
-        --atlas ${atlas} \
-        --affine reg_affine.txt
-    """
-}
-
-// ------------------------------------------------------------------
-// 7. Nonlinear Registration
-// ------------------------------------------------------------------
-process DwiNonlinearReg {
-    conda "envs/micaflow.yml"
-    publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
-
-    input:
-    tuple val(type), path(linear_reg_output)
-    path atlas
-
-    output:
-    tuple val(type), path("backward_MNI_warp.nii.gz")
-
-    script:
-    """
-    python3 ${workflow.projectDir}/scripts/dwi_nonlinearreg.py \
-        --atlas ${atlas} \
-        --fixed ${linear_reg_output} \
-        --warp backward_MNI_warp.nii.gz
-    """
-}
-
-// ------------------------------------------------------------------
-// 8. Compute FA and MD
-// ------------------------------------------------------------------
 process DwiComputeFaMd {
     conda "envs/micaflow.yml"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/metrics", mode: 'copy'
@@ -233,9 +187,7 @@ process DwiComputeFaMd {
     """
 }
 
-// ------------------------------------------------------------------
-// 9. FA/MD Registration into MNI Space
-// ------------------------------------------------------------------
+
 process DwiFaMdRegistration {
     conda "envs/micaflow.yml"
     publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
@@ -280,6 +232,71 @@ process BiasFieldCorrection {
         -i ${image} \
         -o ${params.subject}_${params.session}_desc-N4_${type}.nii.gz \
         -m ${mask} 
+    """
+}
+
+process SynthSeg_T1w {
+    conda "envs/micaflow.yml"
+    publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
+
+    input:
+    tuple val(type), path(registration_input)
+
+    output:
+    tuple val(type), path("${type}_parcellation.nii.gz")
+
+    script:
+    """
+    python3 ${workflow.projectDir}/scripts/run_synthseg.py \
+        --i ${registration_input} \
+        --o "${type}_parcellation.nii.gz" \
+        --parc \
+        --fast \
+        --threads ${params.threads}
+    """
+}
+
+process SynthSeg_FLAIR{
+    conda "envs/micaflow.yml"
+    publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
+
+    input:
+    tuple val(type), path(registration_input)
+    tuple val(null_type), path(null_registration_input)
+
+    output:
+    tuple val(type), path("${type}_parcellation.nii.gz")
+
+    script:
+    """
+    python3 ${workflow.projectDir}/scripts/run_synthseg.py \
+        --i ${registration_input} \
+        --o "${type}_parcellation.nii.gz" \
+        --parc \
+        --fast \
+        --threads ${params.threads}
+    """
+}
+
+process SynthSeg_DWI {
+    conda "envs/micaflow.yml"
+    publishDir "${params.out_dir}/${params.subject}/${params.session}/xfm", mode: 'copy'
+
+    input:
+        path registration_input
+    tuple val(null_type), path(null_registration_input)
+
+    output:
+        path "DWI_parcellation.nii.gz"
+
+    script:
+    """
+    python3 ${workflow.projectDir}/scripts/run_synthseg.py \
+        --i ${registration_input} \
+        --o "DWI_parcellation.nii.gz" \
+        --parc \
+        --fast \
+        --threads ${params.threads}
     """
 }
 
@@ -400,6 +417,25 @@ process SkullStrip {
     """
 }
 
+
+process DWI_SkullStrip {
+    conda "envs/micaflow.yml" 
+    publishDir "${params.out_dir}/${params.subject}/${params.session}/anat", mode: 'copy'
+    
+    input:
+        path image
+    
+    output:
+    path "DWI_hdbet_bet.nii.gz"
+    
+    script:
+    """
+    python3 ${workflow.projectDir}/scripts/hdbet.py \
+        --input ${image} \
+        --output DWI_hdbet.nii.gz 
+    """
+}
+
 process CalculateMetrics {
     conda "envs/micaflow.yml" 
     publishDir "${params.out_dir}/${params.subject}/${params.session}/metrics", mode: 'copy'
@@ -470,6 +506,7 @@ workflow {
     // Input channels for the anatomical pipeline
     atlas = file("${ATLAS_DIR}/mni_icbm152_t1_tal_nlin_sym_09a.nii")
     atlas_mask = file("${ATLAS_DIR}/mni_icbm152_t1_tal_nlin_sym_09a_mask.nii")
+    atlas_seg = file("${ATLAS_DIR}/mni_icbm152_t1_tal_nlin_sym_09a_seg.nii")
 
     // -----------------------------------------------------------
     // Anatomical pipeline
@@ -494,9 +531,12 @@ workflow {
     input_t1w = input_images.filter { it[0] == 'T1w' }
     input_flair = input_images.filter { it[0] == 'FLAIR' }
 
+    seg_t1w = SynthSeg_T1w(input_t1w)
+    seg_flair = SynthSeg_FLAIR(input_flair, seg_t1w)
+
     // Run registrations
-    reg_out = Registration_T1w(input_t1w, input_flair)
-    mni_reg_out = Registration_MNI152(input_t1w, atlas)
+    reg_out = Registration_T1w(seg_t1w, seg_flair)
+    mni_reg_out = Registration_MNI152(seg_t1w, atlas_seg)
 
     // Ensure separate N4 channels are ready
     n4_skullstrip_t1w = n4_out.filter { it[0] == 'T1w' }.map { tuple -> file(tuple[1]) }
@@ -597,10 +637,6 @@ workflow {
             .map { path -> file(path) }
             .set { b0_bvals }
 
-        input_dwi.view { "input_dwi: $it" }
-        b0_img.view { "b0_img: $it" }
-        b0_bvecs.view { "b0_bvecs: $it" }
-        b0_bvals.view { "b0_bvals: $it" }
 
         // 3) Topup
         topup_out = DwiTopup(
@@ -610,6 +646,7 @@ workflow {
             b0_bvecs
         )
 
+        DWI_mask = DWI_SkullStrip(topup_out.map{ it[2] })
 
 
         // 1) Denoise
@@ -636,14 +673,15 @@ workflow {
         // 5) Bias Correction
         bias_corr = DwiBiasCorrection(
             topup_applied,
-            topup_out.map{ it[2] } // mask
+            DWI_mask
         )
+        
+        seg_DWI = SynthSeg_DWI(topup_out.map{ it[2] }, seg_flair)
 
         (lin_reg, nonlin_reg) = DwiRegistration(
-            topup_applied,
-            n4_out.filter { it[0] == 'T1w' }
+            seg_DWI,
+            seg_t1w
         )
-
 
         // 8) Compute FA/MD
         fa_md = DwiComputeFaMd(
@@ -660,10 +698,8 @@ workflow {
             lin_reg,     
             nonlin_reg   
         )
-
-        fa_md_registered.view()
     } else {
         println "DWI pipeline disabled via --run_dwi false"
     }
-            
+    CleanupWorkDir(fa_md_registered,calculate_metrics_out)    
 }
